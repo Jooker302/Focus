@@ -22,7 +22,7 @@
       <!-- responsive css -->
       <link rel="stylesheet" href="{{asset('admin/css/responsive.css')}}" />
       <!-- color css -->
-      <link rel="stylesheet" href="{{asset('admin/css/colors.css')}}" />
+      {{-- <link rel="stylesheet" href="{{asset('admin/css/colors.css')}}" /> --}}
       <!-- select bootstrap -->
       <link rel="stylesheet" href="{{asset('admin/css/bootstrap-select.css')}}" />
       <!-- scrollbar css -->
@@ -30,9 +30,16 @@
       <!-- custom css -->
       <link rel="stylesheet" href="{{asset('admin/css/custom.css')}}" />
       <!-- calendar file css -->
-      <link rel="stylesheet" href="{{asset('admin/js/semantic.min.css')}}" />
+      {{-- <link rel="stylesheet" href="{{asset('admin/js/semantic.min.css')}}" /> --}}
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
+
+      <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
 
       <script src="https://cdn.tailwindcss.com"></script>
+
+      {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+      {{-- <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script> --}}
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -142,10 +149,10 @@
         </div>
     </div>
 
-
-    <script src="{{asset('admin/js/jquery.min.js')}}"></script>
-    <script src="{{asset('admin/js/popper.min.js')}}"></script>
-    <script src="{{asset('admin/js/bootstrap.min.js')}}"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+    {{-- <script src="{{asset('admin/js/jquery.min.js')}}"></script> --}}
+    {{-- <script src="{{asset('admin/js/popper.min.js')}}"></script> --}}
+    {{-- <script src="{{asset('admin/js/bootstrap.min.js')}}"></script> --}}
     <!-- wow animation -->
     <script src="{{asset('admin/js/animate.js')}}"></script>
     <!-- select country -->
@@ -153,17 +160,17 @@
     <!-- owl carousel -->
     <script src="{{asset('admin/js/owl.carousel.js')}}"></script>
     <!-- chart js -->
-    <script src="{{asset('admin/js/Chart.min.js')}}"></script>
-    <script src="{{asset('admin/js/Chart.bundle.min.js')}}"></script>
+    {{-- <script src="{{asset('admin/js/Chart.min.js')}}"></script> --}}
+    {{-- <script src="{{asset('admin/js/Chart.bundle.min.js')}}"></script> --}}
     <script src="{{asset('admin/js/utils.js')}}"></script>
-    <script src="{{asset('admin/js/analyser.js')}}"></script>
+    {{-- <script src="{{asset('admin/js/analyser.js')}}"></script> --}}
     <!-- nice scrollbar -->
     <script src="{{asset('admin/js/perfect-scrollbar.min.js')}}"></script>
     <script>
        var ps = new PerfectScrollbar('#sidebar');
     </script>
     <!-- custom js -->
-    <script src="{{asset('admin/js/custom.js')}}"></script>
-    <script src="{{asset('admin/js/chart_custom_style2.js')}}"></script>
+    {{-- <script src="{{asset('admin/js/custom.js')}}"></script> --}}
+    {{-- <script src="{{asset('admin/js/chart_custom_style2.js')}}"></script> --}}
 </body>
 </html>
