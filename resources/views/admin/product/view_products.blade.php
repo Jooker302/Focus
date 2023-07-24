@@ -2,52 +2,67 @@
 
 @section('content')
     <div class="m-6">
-
         <div class="flex justify-end">
-            <a 
+            <a href="{{ url('add-product') }}"
                 class="m-4 border-2 border-cyan-500 text-black rounded-2xl p-2 hover:text-white hover:bg-cyan-500 hover:border-white"
-                href="{{ url('add-sub-category') }}">Add Sub Category</a>
+                href="{{ url('add-product') }}">Add Product</a>
         </div>
 
-        <div class="m-2">
+        <div class="m-2" style="overflow-x: auto;">
             <table id="myTable">
                 <thead>
                     <th>
                         ID
                     </th>
                     <th>
-                        Category
+                        Category ID
+                    </th>
+                    <th>
+                        Sub Category ID
+                    </th>
+                    <th>
+                        Image
                     </th>
                     <th>
                         Name
+                    </th>
+                    <th>
+                        Top
                     </th>
                     <th>
                         Action
                     </th>
                 </thead>
                 <tbody>
-                    @foreach ($categorys as $category)
+                    @foreach ($products as $product)
                         <tr>
                             <td>
-                                {{ $category->id ?? '' }}
+                                {{ $product->id ?? '' }}
                             </td>
                             <td>
-                                @php
-                                    $main = \App\Models\Category::find( $category->category_id);
-                                @endphp
-                                {{$main->name ?? ''}}
+                                {{ $product->category_id ?? '' }}
                             </td>
                             <td>
-                                {{ $category->name ?? '' }}
+                                {{ $product->sub_category_id ?? '' }}
+                            </td>
+                            <td>
+                                <img style="height: 200px; width: 200px" src="{{$product->image}}" alt="No Image">
+
+                            </td>
+                            <td>
+                                {{ $product->name ?? '' }}
+                            </td>
+                            <td>
+                                {{ $product->top ?? '' }}
                             </td>
                             <td>
                                 <div class="flex justify-center">
-                                    <form action="{{ url('edit-sub-category') }}" method="get">
-                                        <input type="hidden" name="id" value="{{ $category->id ?? '' }}">
+                                    <form action="{{ url('edit-product') }}" method="get">
+                                        <input type="hidden" name="id" value="{{ $product->id ?? '' }}">
                                         <input type="submit" value="Edit"
                                             class="px-2 py-1 border-2 border-yellow-500 text-black rounded-2xl hover:bg-yellow-500 hover:text-white">
                                     </form>
-                                    <a href="{{ url('delete-sub-category', $category->id) }}"
+                                    <a href="{{ url('delete-product', $product->id) }}"
                                         class="px-2 py-1 mx-1 border-2 border-red-500 text-black rounded-2xl hover:bg-red-500 hover:text-white">Delete</a>
                                 </div>
                             </td>
@@ -56,9 +71,7 @@
                 </tbody>
             </table>
         </div>
-
     </div>
-    {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
     <script>
         let table = new DataTable('#myTable');
     </script>

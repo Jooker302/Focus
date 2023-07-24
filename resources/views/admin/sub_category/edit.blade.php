@@ -15,6 +15,8 @@
             <label for="name" class="text-black">Name</label>
             <input type="hidden" name="id" value="{{$category->id}}">
             <input class="form-control col-md-6" value="{{$category->name}}" type="text" name="name" placeholder="Name">
+            <label for="name" class="text-black my-2">Category</label>
+
             <select class="form-control col-md-6" name="category_id" id="">
                 @foreach ($main as $c)
                     <option value="{{$c->id}} @if($category->category_id == $c->id) selected @endif">{{$c->name}}</option>

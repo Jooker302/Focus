@@ -91,6 +91,12 @@
                         <li><a href="{{url('view-category')}}"><i class="fa fa-clock-o orange_color"></i> <span>Category</span></a>
                         </li>
 
+                        <li><a href="{{url('view-sub-category')}}"><i class="fa fa-clock-o orange_color"></i> <span>Sub Category</span></a>
+                        </li>
+
+                        <li><a href="{{url('view-products')}}"><i class="fa fa-clock-o orange_color"></i> <span>Product</span></a>
+                        </li>
+
 
 
                     </ul>
