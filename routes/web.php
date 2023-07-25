@@ -35,6 +35,14 @@ Route::get('/test', function () {
     return view('layouts\admin');
 });
 
+Route::get('/cart', function () {
+    return view('cart');
+});
+
+Route::get('/order', function () {
+    return view('order');
+});
+
 Auth::routes();
 
 

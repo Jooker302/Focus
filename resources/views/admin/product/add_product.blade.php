@@ -38,6 +38,9 @@
             <label for="name" class="text-black">Name</label>
             <input class="form-control col-md-6" type="text" name="name" placeholder="Name">
 
+            <label for="name" class="text-black">Price</label>
+            <input class="form-control col-md-6" type="text" name="price" placeholder="Name">
+
             <label for="top" class="text-black">Hot Picks</label>
             <input class="form-control col-md-2" type="checkbox" name="top" placeholder="Top (0 or 1)">
 

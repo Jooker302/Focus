@@ -27,6 +27,9 @@
                         Name
                     </th>
                     <th>
+                        Price
+                    </th>
+                    <th>
                         Top
                     </th>
                     <th>
@@ -45,12 +48,16 @@
                             <td>
                                 {{ $product->sub_category_id ?? '' }}
                             </td>
+
                             <td>
                                 <img style="height: 200px; width: 200px" src="{{$product->image}}" alt="No Image">
 
                             </td>
                             <td>
                                 {{ $product->name ?? '' }}
+                            </td>
+                            <td>
+                                {{ $product->price ?? '' }}
                             </td>
                             <td>
                                 {{ $product->top ?? '' }}

@@ -53,6 +53,7 @@ class ProductController extends Controller
         $product->sub_category_id = $request->sub_category_id;
         $product->image = $base64Image;
         $product->name = $request->name;
+        $product->price = $request->price;
         $product->top = $top; // Default to '0' if 'top' field not provided
         $product->save();
         return redirect('view-products');
@@ -86,6 +87,7 @@ class ProductController extends Controller
         $product->sub_category_id = $request->sub_category_id;
 
         $product->name = $request->name;
+        $product->price = $request->price;
         $product->top = $top; // Default to '0' if 'top' field not provided
         $product->save();
         return redirect('view-products');

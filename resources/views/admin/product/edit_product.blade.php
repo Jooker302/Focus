@@ -20,7 +20,7 @@
         <label for="category_id" class="text-black">Category ID</label>
         <select class="form-control col-md-6" name="category_id" id="">
             @foreach ($categories as $c)
-                <option value="{{$c->id}} @if($product->category_id == $c->id) selected @endif">{{$c->name}}</option>
+                <option value="{{$c->id}}" @if($product->category_id == $c->id) selected @endif>{{$c->name}}</option>
             @endforeach
         </select>
         {{-- <input class="form-control col-md-6" type="text" name="category_id" placeholder="Category ID"> --}}
@@ -37,6 +37,9 @@
 
             <label for="name" class="text-black">Name</label>
             <input class="form-control col-md-6" value="{{$product->name}}" type="text" name="name" placeholder="Name">
+
+            <label for="name" class="text-black">Price</label>
+            <input class="form-control col-md-6" value="{{$product->price}}" type="text" name="price" placeholder="Name">
 
             <label for="top" class="text-black">Top</label>
             {{-- <input class="form-control col-md-6" value="{{$product->top}}" type="text" name="top" placeholder="Top (0 or 1)"> --}}
