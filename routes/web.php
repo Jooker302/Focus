@@ -1,10 +1,12 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\User\MainController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SubCategoryController;
-use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\User\MainController;
+use App\Http\Controllers\User\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,13 +25,15 @@ use App\Http\Controllers\User\MainController;
 
 Route::get('/',[MainController::class,'index']);
 
+Route::get('/product',[MainController::class,'product']);
+
 Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/product', function () {
-    return view('product');
-});
+// Route::get('/product', function () {
+//     return view('product');
+// });
 
 Route::get('/contactus', function () {
     return view('contactus');
@@ -75,6 +79,15 @@ Route::post('store-product', [ProductController::class, 'store']);
 Route::get('edit-product', [ProductController::class, 'edit']);
 Route::post('update-product', [ProductController::class, 'update']);
 Route::get('delete-product/{id}', [ProductController::class, 'delete']);
+
+
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::post('add-to-cart', [CartController::class,'add_to_cart']);
+
+});
+
+
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('user_id');
             $table->string('product_id');
-            $table->string('quantity');
+            $table->string('quantity')->default(1);
             $table->timestamps();
         });
     }
