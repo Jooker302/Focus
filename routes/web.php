@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\User\MainController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +17,12 @@ use App\Http\Controllers\Admin\ProductController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/',[MainController::class,'index']);
+
 Route::get('/about', function () {
     return view('about');
 });
@@ -31,9 +35,7 @@ Route::get('/contactus', function () {
     return view('contactus');
 });
 
-Route::get('/test', function () {
-    return view('layouts\admin');
-});
+
 
 Route::get('/cart', function () {
     return view('cart');
@@ -41,6 +43,11 @@ Route::get('/cart', function () {
 
 Route::get('/order', function () {
     return view('order');
+});
+
+
+Route::get('/test', function () {
+    return view('layouts\admin');
 });
 
 Auth::routes();

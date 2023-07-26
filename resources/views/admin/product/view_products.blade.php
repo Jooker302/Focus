@@ -39,14 +39,22 @@
                 <tbody>
                     @foreach ($products as $product)
                         <tr>
+                            @php
+
+                                $category = \App\Models\Category::find($product->category_id);
+
+                                if($product->sub_category_id != null){
+                                    $sub_category = \App\Models\Category::find($product->sub_category_id);
+                                }
+                            @endphp
                             <td>
                                 {{ $product->id ?? '' }}
                             </td>
                             <td>
-                                {{ $product->category_id ?? '' }}
+                                {{ $category->name ?? '' }}
                             </td>
                             <td>
-                                {{ $product->sub_category_id ?? '' }}
+                                {{ $sub_category->name ?? '' }}
                             </td>
 
                             <td>
