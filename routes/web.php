@@ -59,6 +59,7 @@ Route::get('/test', function () {
 Auth::routes();
 
 
+Route::post('remove-cart',[CartController::class,'remove_cart']);
 
 
 

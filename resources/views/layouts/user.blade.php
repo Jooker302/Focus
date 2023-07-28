@@ -73,6 +73,12 @@
                             </a>
                         @endguest
                         @auth
+                            <a style="margin-right: 10px;" href="{{ url('cart') }}">
+                                Cart
+                            </a>
+                            <a href="{{ url('order') }}">
+                                Orders
+                            </a>
                             <a href="{{url('cart')}}">
                                 <img src="images/cart.png" alt="">
                             </a>
